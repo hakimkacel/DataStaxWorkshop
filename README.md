@@ -74,11 +74,11 @@ You should then be able to connect to the management consoles for OpsCenter, Spa
 
 OpsCenter and Solr should always start on Node 0, but you may need to check the node where the Spark Master is running. You can easily do this by connecting to one of the nodes via ssh and using the command:
 ```
-dsetool sparkmaster
-spark://172.31.18.124:7077
+dse client-tool spark master-address
+spark://172.31.29.108:7077
 ```
 
-In this example the response tells us that the Spark Master is running on internal address 172.31.18.124 - so we need to use the corresponding external address http://54.229.246.130:7080 to acccess it from a browser on a client machine.
+In this example the response tells us that the Spark Master is running on internal address 172.31.29.108 - so we need to use the corresponding external address http://54.229.250.57:7080 to acccess it from a browser on a client machine.
 
 
 #### Connecting to the cluster from DevCenter
@@ -389,7 +389,7 @@ SELECT * FROM sales where name='kunal';
 How did we do? We returned three records. Total elapsed time for the request on our 3-node cluster was 16370 microseconds. 
 
 ```
-Request complete | 2016-06-02 08:13:54.028370 |  172.31.18.124 |          16370
+Request complete | 2017-01-24 15:24:34.051088 | 172.31.18.124 |          22088
 ```
 
 **Let's compare a lower consistency level:**
@@ -401,7 +401,7 @@ Request complete | 2016-06-02 08:13:54.028370 |  172.31.18.124 |          16370
 Let's try the **SELECT** statement again. Any changes in latency? Run it a couple of times for a consistent result. 
 
 ```
-Request complete | 2016-06-03 05:26:04.894594 | 172.31.18.124 |           4594
+Request complete | 2017-01-24 15:25:14.743731 | 172.31.18.124 |          14731
 ```
 
 This looks much better now doesn't it? **LOCAL_QUORUM** is the most commonly used consistency level among developers. It provides a good level of performance and a moderate amount of consistency. That being said, many use cases can warrant  **CL=LOCAL_ONE**. 
@@ -422,7 +422,7 @@ Take a look at the trace output. Look at all queries and contact points. What yo
 And there's a big reduction in request latency too:
 
 ```
-Request complete | 2016-06-03 05:27:57.145701 | 172.31.18.124 |           1701
+Request complete | 2017-01-24 15:26:09.504292 | 172.31.18.124 |           1292
 ```
 
 For more detailed classes on data modeling, consistency, and Cassandra 101, check out the free classes at the [DataStax Academy](www.academy.datastax.com) website. 
