@@ -499,7 +499,8 @@ If any of the packages are not installed, follow the instructions below. If you'
 
 ```
 sudo apt-get install gcc python-dev
-sudo apt-get install python-pip python-dev build-essential 
+sudo apt-get install python-pip python-dev python3-dev build-essential 
+sudo apt-get install cython cython3
 sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv 
 ```
