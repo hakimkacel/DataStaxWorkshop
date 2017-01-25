@@ -1,7 +1,7 @@
-# CapGeminiWorkshop
+# Cap Gemini Workshop
 Cap Gemini Workshop - hands-on exercises with DSE: Cassandra, Spark and Solr
 
-Welcome to DataStax Essentials Day!
+Welcome to Cap Gemini Workshop!
 ===================
 ![icon](http://i.imgur.com/FoIOBlt.png)
 
@@ -28,28 +28,28 @@ Column 2 => cluster 2
 ```
 Cap Gemini Workshop - Cluster 1
 Node 0: 54.229.246.130
-Node 1: 54.229.245.187
-Node 2: 54.229.250.57
+<!---Node 1: 54.229.245.187
+Node 2: 54.229.250.57--->
 
 Cap Gemini Workshop - Cluster 2
 Node 0: 54.229.251.190
-Node 1: 54.229.251.113
-Node 2: 54.229.250.20
+<!---Node 1: 54.229.251.113
+Node 2: 54.229.250.20--->
 
 Cap Gemini Workshop - Cluster 3
 Node 0: 54.229.247.187
-Node 1: 54.229.252.159
-Node 2: 54.154.218.242
+<!---Node 1: 54.229.252.159
+Node 2: 54.154.218.242--->
 
 Cap Gemini Workshop - Cluster 4
 Node 0: 54.229.55.89
-Node 1: 54.154.220.103
-Node 2: 54.154.195.56
+<!---Node 1: 54.154.220.103
+Node 2: 54.154.195.56--->
 
 Cap Gemini Workshop - Cluster 5
 Node 0: 54.154.160.248
-Node 1: 54.194.161.32
-Node 2: 54.229.137.177
+<!---Node 1: 54.194.161.32
+Node 2: 54.229.137.177--->
 ```
 
 To SSH into the cluster, connect as root using the password provided and the external address of one of the nodes:
@@ -468,7 +468,7 @@ select * from sales WHERE solr_query='{"q":"name:kunal", "fq":"item:*pple*"}';
  kunal | 20150204 |  Apple iPad |   999 |       null
 ```
 
-We can control how the data is sorted based on a column value:
+<!---We can control how the data is sorted based on a column value:
 ```
 select * from sales WHERE solr_query='{"q":"name:kunal", "fq":"item:*pple*", "sort":"price desc"}';
 
@@ -477,6 +477,7 @@ select * from sales WHERE solr_query='{"q":"name:kunal", "fq":"item:*pple*", "so
  kunal | 20150204 |  Apple iPad |   999 |       null
  kunal | 20150205 | Apple Watch |   299 |       null
  ```
+ --->
  
 > For your reference, [here's the doc](http://docs.datastax.com/en/latest-dse/datastax_enterprise/srch/queriesCql.html#queriesCql__srchSolrTokenExp) that shows some of things you can do.
 
