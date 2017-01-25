@@ -28,28 +28,18 @@ Column 2 => cluster 2
 ```
 Cap Gemini Workshop - Cluster 1
 Node 0: 54.229.246.130
-<!---Node 1: 54.229.245.187
-Node 2: 54.229.250.57--->
 
 Cap Gemini Workshop - Cluster 2
 Node 0: 54.229.251.190
-<!---Node 1: 54.229.251.113
-Node 2: 54.229.250.20--->
 
 Cap Gemini Workshop - Cluster 3
 Node 0: 54.229.247.187
-<!---Node 1: 54.229.252.159
-Node 2: 54.154.218.242--->
 
 Cap Gemini Workshop - Cluster 4
 Node 0: 54.229.55.89
-<!---Node 1: 54.154.220.103
-Node 2: 54.154.195.56--->
 
 Cap Gemini Workshop - Cluster 5
 Node 0: 54.154.160.248
-<!---Node 1: 54.194.161.32
-Node 2: 54.229.137.177--->
 ```
 
 To SSH into the cluster, connect as root using the password provided and the external address of one of the nodes:
@@ -515,7 +505,7 @@ You can check if its already installed using the following command:
 pip show cassandra-driver
 ---
 Name: cassandra-driver
-Version: 3.4.1
+Version: 3.7.1
 Location: /usr/local/lib/python2.7/dist-packages
 Requires: six, futures
 ```
@@ -534,6 +524,7 @@ Now we need to load the data and create our Solr cores.
 This will create the CQL schemas and load the data. Be sure to pass the name of your keyspace as a parameter:
 
 ```
+From the folder Solr-Amazon-Book-Demo/ at root level:
 ./create_data.sh <name of your keyspace>
 ...
 Loading into Keyspace ...
@@ -577,8 +568,8 @@ CREATE TABLE <your keyspace name>.clicks (
     PRIMARY KEY (asin, seq, user)
 ) WITH CLUSTERING ORDER BY (seq DESC, user ASC);
 ```
-And book metadata: 
 
+And book metadata: 
 ```
 CREATE TABLE <your keyspace name>.metadata (
     asin text PRIMARY KEY,
@@ -602,7 +593,7 @@ use <yourkeyspace>;
 
 **Filter queries**: These are awesome because the result set gets cached in memory. 
 ```
-SELECT * FROM metadata WHERE solr_query='{"q":"title:Noir~", "fq":"categories:Books", "sort":"title asc"}' limit 10; 
+SELECT * FROM metadata WHERE solr_query='{"q":"title:Noir~", "fq":"categories:Books"}' limit 10; 
 ```
 
 **Faceting**: Get counts of fields 
@@ -648,12 +639,12 @@ It's a little tricky to have an entire class run streaming operations on a singl
 Try some unfamiliar CQL commands on that Amazon data - like a sum on a column:
 
 ```
-use <your keyspace name>.;
+use <your keyspace name>;
 SELECT sum(price) FROM metadata;
 ```
 You should see the following output:
 ```
-140431.25000000006
+140431.24999999953
 ```
 Try a join on two tables:
 ```
