@@ -1,7 +1,7 @@
-# Cap Gemini Workshop
-Cap Gemini Workshop - hands-on exercises with DSE: Cassandra, Spark and Solr
+# DataStax Workshop
+DataStax Workshop - hands-on exercises with DSE: Cassandra, Spark and Solr
 
-Welcome to Cap Gemini Workshop!
+Welcome to DataStax Workshop!
 ===================
 ![icon](http://i.imgur.com/FoIOBlt.png)
 
@@ -26,20 +26,15 @@ Column 2 => cluster 2
 …
 
 ```
-Cap Gemini Workshop - Cluster 1
-Node 0: 54.229.246.130
+Docapost Workshop Cluster 01  
+Node 0: 54.194.75.32
 
-Cap Gemini Workshop - Cluster 2
-Node 0: 54.229.251.190
+Docapost Workshop Cluster 02
+Node 0: 54.229.84.95
 
-Cap Gemini Workshop - Cluster 3
-Node 0: 54.229.247.187
+Docapost Workshop Cluster 03
+Node 0: 54.229.55.146
 
-Cap Gemini Workshop - Cluster 4
-Node 0: 54.229.55.89
-
-Cap Gemini Workshop - Cluster 5
-Node 0: 54.154.160.248
 ```
 
 To SSH into the cluster, connect as root using the password provided and the external address of one of the nodes:
@@ -65,10 +60,10 @@ You should then be able to connect to the management consoles for OpsCenter, Spa
 OpsCenter and Solr should always start on Node 0, but you may need to check the node where the Spark Master is running. You can easily do this by connecting to one of the nodes via ssh and using the command:
 ```
 dse client-tool spark master-address
-spark://172.31.29.108:7077
+spark://172.31.21.12:7077
 ```
 
-In this example the response tells us that the Spark Master is running on internal address 172.31.29.108 - so we need to use the corresponding external address http://54.229.250.57:7080 to acccess it from a browser on a client machine.
+In this example the response tells us that the Spark Master is running on internal address 172.31.21.12 - so we need to use the corresponding external address http://54.194.75.32:7080 to acccess it from a browser on a client machine.
 
 
 #### Connecting to the cluster from DevCenter
