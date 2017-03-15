@@ -26,15 +26,20 @@ Column 2 => cluster 2
 …
 
 ```
-Docapost Workshop Cluster 01  
-Node 0: 54.194.75.32
+DataStax Workshop - Octo - Cluster 01  
+Node 0: 54.194.26.1
 
-Docapost Workshop Cluster 02
-Node 0: 54.229.84.95
+DataStax Workshop - Octo - Cluster 02
+Node 0: 54.194.111.133
 
-Docapost Workshop Cluster 03
-Node 0: 54.229.55.146
+DataStax Workshop - Octo - Cluster 03
+Node 0: 54.194.101.247
 
+DataStax Workshop - Octo - Cluster 04
+Node 0: 54.194.120.152
+
+DataStax Workshop - Octo - Cluster 05
+Node 0: 54.171.162.64
 ```
 
 To SSH into the cluster, connect as root using the password provided and the external address of one of the nodes:
@@ -60,22 +65,10 @@ You should then be able to connect to the management consoles for OpsCenter, Spa
 OpsCenter and Solr should always start on Node 0, but you may need to check the node where the Spark Master is running. You can easily do this by connecting to one of the nodes via ssh and using the command:
 ```
 dse client-tool spark master-address
-spark://172.31.21.12:7077
+spark://172.31.3.27:7077
 ```
 
-In this example the response tells us that the Spark Master is running on internal address 172.31.21.12 - so we need to use the corresponding external address http://54.194.75.32:7080 to acccess it from a browser on a client machine.
-
-
-#### Connecting to the cluster from DevCenter
-If you've installed DevCenter you can use it to run queries, view schemas, manage scripts etc. 
-
-To access your cluster:
-- Simply add a new connection, supplying a name for your connection and for the contact host use any of the external IP's provided.
-- Wait a few seconds for the connection to complete, and the keyspace and table details for the database will be displayed
-- You can view Keyspaces and tables, run CQL commands and save scripts.
-
-You can run most of the following exercioses in DevCenter but to get the full benefit of the advanced features like consistency levels you should use **cqlsh** as an interactive command line tool for CQL access to Cassandra. 
-For the exercies below we will be using cqlsh.
+In this example the response tells us that the Spark Master is running on internal address 172.31.3.27 - so we need to use the corresponding external address http://54.171.162.64:7080 to acccess it from a browser on a client machine.
 
 ----------
 
