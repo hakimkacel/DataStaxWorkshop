@@ -35,7 +35,7 @@
     <field indexed="true" multiValued="true" name="buy_after_viewing" stored="true" type="TextField"/>
     <field indexed="true" multiValued="false" name="imurl" stored="true" type="TextField"/>
     <field indexed="true" multiValued="true" name="also_bought" stored="true" type="TextField"/>
-    <field indexed="true" multiValued="true" name="categories" stored="true" type="TextField"/>
+    <field indexed="true" multiValued="true" name="categories" stored="true" type="TextField" docValues="true"/>
     <field indexed="true" multiValued="false" name="price" stored="true" type="TrieDoubleField"/>
     <field indexed="true" multiValued="false" name="title" stored="true" type="TextField"/>
     <field indexed="true" multiValued="false" name="textsuggest" stored="false" type="autocomplete_edge"/>
