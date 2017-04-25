@@ -89,11 +89,11 @@ Cassandra is the brains of DSE. It's an awesome storage engine that handles repl
 Start cqlsh like this from the command prompt on one of the nodes in the cluster:
 
 ```
-cqlsh <node private ip address>
+cqlsh <node_private_ip_address>
 ``` 
 or
 ```
-cqlsh <node name> 
+cqlsh <node_name> 
 ```
 ie:
 ```
@@ -518,7 +518,7 @@ Now we need to load the data and create our Solr cores.
 This will create the CQL schemas and load the data. Be sure to pass the name of your keyspace as a parameter:
 
 ```
-From the folder Solr-Amazon-Book-Demo/ at root level:
+From the folder DataStaxWorkshop/ at root level:
 ./create_data.sh <name of your keyspace>
 ...
 Loading into Keyspace ...
