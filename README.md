@@ -27,13 +27,25 @@ Column 2 => cluster 2
 
 ```
 DataStax Workshop - Cluster 01  
-Node 0: 54.171.180.227
+Node 0: 54.229.244.78
 
 DataStax Workshop - Cluster 02
-Node 0: 54.194.102.135
+Node 0: 54.171.186.88
 
 DataStax Workshop - Cluster 03
-Node 0: 54.171.76.11
+Node 0: 54.246.244.177
+
+DataStax Workshop - Cluster 04
+Node 0: 54.171.36.63
+
+DataStax Workshop - Cluster 05
+Node 0: 54.246.245.74
+
+DataStax Workshop - Cluster 06
+Node 0: 54.171.26.237
+
+DataStax Workshop - Cluster 07
+Node 0: 54.229.27.202
 ```
 
 To SSH into the cluster, connect as root using the password provided and the external address of one of the nodes:
@@ -52,9 +64,9 @@ In this example we'll use these IP addresses:
 
 You should then be able to connect to the management consoles for OpsCenter, Spark and Solr:
 
-* OpsCenter: http://Node 0 external address:8888 
-* Spark Master: http://Node 0 external address:7080 
-* Solr UI: http://Node 0 external address:8983/solr 
+* OpsCenter: http://<Node_0_external_address>:8888 
+* Spark Master: http://<Node_0_external_address>:7080 
+* Solr UI: http://<Node_0_external_address>:8983/solr 
 
 OpsCenter and Solr should always start on Node 0, but you may need to check the node where the Spark Master is running. You can easily do this by connecting to one of the nodes via ssh and using the command:
 ```
@@ -62,7 +74,7 @@ dse client-tool spark master-address
 spark://172.31.3.27:7077
 ```
 
-In this example the response tells us that the Spark Master is running on internal address 172.31.3.27 - so we need to use the corresponding external address http://54.171.162.64:7080 to acccess it from a browser on a client machine.
+In this example the response tells us that the Spark Master is running on internal address 172.31.3.27 - so we need to use the corresponding external address http://54.229.244.78:7080 to acccess it from a browser on a client machine.
 
 ----------
 
@@ -906,5 +918,5 @@ dsetool status //shows current status of cluster, including DSE features
 
 To see OpsCenter UI, open the browser to
 ```
- http://<your cluster IP>:8888
+ http://<your_cluster_IP>:8888
 ```
