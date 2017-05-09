@@ -27,25 +27,16 @@ Column 2 => cluster 2
 
 ```
 DataStax Workshop - Cluster 01  
-Node 0: 54.229.244.78
+Node 0: 54.194.136.180
 
 DataStax Workshop - Cluster 02
-Node 0: 54.171.186.88
+Node 0: 54.154.46.170
 
 DataStax Workshop - Cluster 03
-Node 0: 54.246.244.177
+Node 0: 54.171.54.179
 
 DataStax Workshop - Cluster 04
-Node 0: 54.171.36.63
-
-DataStax Workshop - Cluster 05
-Node 0: 54.246.245.74
-
-DataStax Workshop - Cluster 06
-Node 0: 54.171.26.237
-
-DataStax Workshop - Cluster 07
-Node 0: 54.229.27.202
+Node 0: 54.229.188.15
 ```
 
 To SSH into the cluster, connect as root using the password provided and the external address of one of the nodes:
